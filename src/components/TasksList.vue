@@ -1,8 +1,8 @@
 <template>
   <div id="tasks">
-    <button
-      @click="newFormVisible = !newFormVisible"
-      class="btn round-icon">+</button>
+    <button class="btn round-icon" @click="newFormVisible = !newFormVisible">
+      {{ newFormVisible ? "✕" : "＋" }}
+    </button>
 
     <div
       v-if="newFormVisible"
@@ -32,7 +32,7 @@
       </TaskCard>
     </div>
 
-    <p v-else>You don't have any tasks yet 😢</p>
+    <p v-else-if="!newFormVisible">You don't have any tasks yet...</p>
   </div>
 </template>
 
