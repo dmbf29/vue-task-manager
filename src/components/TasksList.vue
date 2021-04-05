@@ -1,10 +1,14 @@
 <template>
   <div id="tasks">
     <button
-      class="btn round-icon"
-      @click="addTask(newTitle, newDescription), resetForm()">+</button>
+      @click="newFormVisible = !newFormVisible"
+      class="btn round-icon">+</button>
 
-    <div class="task-card new-task">
+    <div
+      v-if="newFormVisible"
+      class="task-card new-task"
+      @keyup.enter="addTask(newTitle, newDescription), resetForm()"
+    >
       <div>
         <input
           type="text"
@@ -43,7 +47,8 @@ export default {
     return {
       tasks: [],
       newTitle: '',
-      newDescription: ''
+      newDescription: '',
+      newFormVisible: false,
     };
   },
 
