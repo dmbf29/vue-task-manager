@@ -1,10 +1,10 @@
 <template>
-  <div class="task-card">
+  <div :class="['task-card', { done: done }]">
     <div>
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
     </div>
-    <div>{{ done ? "✅" : "⭕️"}}</div>
+    <div></div>
   </div>
 </template>
 
@@ -17,11 +17,7 @@ export default {
   },
 
   data() {
-    return {
-      // title: "Make the component dynamic",
-      // description: "Learn about data",
-      // done: false,
-    }
+    return {}
   }
 }
 </script>
