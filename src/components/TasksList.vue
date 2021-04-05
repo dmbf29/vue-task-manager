@@ -2,7 +2,7 @@
   <div id="tasks">
     <button
       class="btn round-icon"
-      @click="addTask(newTitle, newDescription)">+</button>
+      @click="addTask(newTitle, newDescription), resetForm()">+</button>
 
     <div class="task-card new-task">
       <div>
@@ -50,6 +50,8 @@ export default {
   methods: {
     addTask(title, description, done = false) {
       this.tasks.unshift({ title, description, done})
+    },
+    resetForm() {
       this.newTitle = ""
       this.newDescription = ""
     }
