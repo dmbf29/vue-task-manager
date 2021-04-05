@@ -50,6 +50,8 @@ export default {
   methods: {
     addTask(title, description, done = false) {
       this.tasks.unshift({ title, description, done})
+      this.newTitle = ""
+      this.newDescription = ""
     }
   }
 }
