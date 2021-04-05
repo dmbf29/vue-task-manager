@@ -1,18 +1,26 @@
 <template>
   <div class="task-card">
     <div>
-      <h3>Create a card component</h3>
-      <p>Create a new TaskCard.vue file in the components folder, then import it in TasksList.vue</p>
+      <h3>{{ title }}</h3>
+      <p>{{ description }}</p>
     </div>
+    <div>{{ done ? "✅" : "⭕️"}}</div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    title: String,
+    description: String,
+    done: {type: Boolean, default: false},
+  },
+
   data() {
     return {
-      title: "Make the component dynamic",
-      description: "Learn about data"
+      // title: "Make the component dynamic",
+      // description: "Learn about data",
+      // done: false,
     }
   }
 }
